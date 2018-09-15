@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">بيت القهوة</string>
+    <string name="name_hint">إسم العميل</string>
+    <string name="quantity">1</string>
+    <string name="toppings">:إضافات</string>
+    <string name="whipped_cream">كريمة مخفوقة</string>
+    <string name="chocolate">شوكولاته</string>
+    <string name="quantity_label">العدد:</string>
+    <string name="send_mail">أرسل الفاتورة بالبريد</string>
+    <string name="order_history_text">فواتير</string>
+    <string name="order_button_text">طلب</string>
+    <string name="clear_history_button">مسح البانيات</string>
+    <string name="slogan">بيت\nالقهوة</string>
+    <string name="thank_you">شكراً ! إستمتع بمشروبك</string>
+    <!-- Order summary -->
+    <string name="order_summary_title">ملخص الطلب: </string>
+    <string name="order_summary_name">الاسم: </string>
+    <string name="order_summary_whipped_cream">كريمة مخفوقة: </string>
+    <string name="order_summary_chocolate">شوكولاته: </string>
+    <string name="order_summary_quantity">العدد: </string>
+    <string name="order_summary_price">اجمالي الفاتورة: </string>
+</resources>

@@ -1,0 +1,27 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorControlNormal">@color/colorPrimaryDark</item>   <!-- normal border color change as you wish -->
+        <item name="colorControlActivated">@color/colorPrimary</item> <!-- activated color change as you wish -->
+        <item name="android:textColor">@color/colorPrimary</item> <!-- checkbox text color -->
+    </style>
+    <style name="heading">
+        <item name="android:textColor">@color/colorPrimaryLight</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textSize">16dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+    </style>
+    <style name="list_item">
+        <item name="android:textColor">@color/colorPrimaryLight</item>
+        <item name="android:background">@color/colorDark</item>
+        <item name="android:textSize">16dp</item>
+        <item name="android:paddingRight">2dp</item>
+        <item name="android:paddingLeft">2dp</item>
+        <item name="android:layout_marginBottom">2dp</item>
+    </style>
+</resources>
