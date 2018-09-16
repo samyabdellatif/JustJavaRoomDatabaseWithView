@@ -1,7 +1,5 @@
 package com.example.android.justjava;
 
-import android.app.Activity;
-import android.app.Application;
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -9,15 +7,20 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import java.text.Format;
 import java.util.List;
 
 public class OrderListAdapter extends RecyclerView.Adapter<OrderListAdapter.OrderViewHolder> {
 
     class OrderViewHolder extends RecyclerView.ViewHolder {
-        private final TextView orderItemView;
+        private final TextView orderIdItemView;
+        private final TextView orderNameItemView;
+        private final TextView orderTotalItemView;
         private OrderViewHolder(View itemView) {
             super(itemView);
-            orderItemView = itemView.findViewById(R.id.textView);
+            orderIdItemView = itemView.findViewById(R.id.id_text_view);
+            orderNameItemView = itemView.findViewById(R.id.name_text_view);
+            orderTotalItemView = itemView.findViewById(R.id.total_text_view);
         }
     }
 
@@ -36,10 +39,14 @@ public class OrderListAdapter extends RecyclerView.Adapter<OrderListAdapter.Orde
     public void onBindViewHolder(OrderViewHolder holder, int position) {
         if (mCoffeeOrder != null) {
             CoffeeOrder current = mCoffeeOrder.get(position);
-            holder.orderItemView.setText(current.getOrderSummary());
+            holder.orderIdItemView.setText(String.valueOf(current.getOrderID()));
+            holder.orderNameItemView.setText(current.getCostumerName());
+            holder.orderTotalItemView.setText(String.valueOf(current.getTotalPrice()));
         } else {
             // Covers the case of data not being ready yet.
-            holder.orderItemView.setText("No Orders");
+            holder.orderIdItemView.setVisibility(View.GONE);
+            holder.orderNameItemView.setVisibility(View.GONE);
+            holder.orderTotalItemView.setVisibility(View.GONE);
         }
     }
 

@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
         orderViewModel.getmAllCoffeeOrder().observe(this, new Observer<List<CoffeeOrder>>() {
             @Override
             public void onChanged(@Nullable final List<CoffeeOrder> orders) {
-                // Update the cached copy of the words in the adapter.
+                // Update the cached copy of the CoffeeOrder in the adapter.
                 adapter.setmCoffeeOrder(orders);
             }
         });

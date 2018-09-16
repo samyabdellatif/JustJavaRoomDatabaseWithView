@@ -7,6 +7,7 @@ import android.arch.persistence.room.RoomDatabase;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.support.annotation.NonNull;
+import android.widget.Toast;
 
 @Database(entities = {CoffeeOrder.class}, version = 1,exportSchema = false)
 public abstract class OrdersDatabase extends RoomDatabase {
@@ -32,7 +33,7 @@ public abstract class OrdersDatabase extends RoomDatabase {
     }
 
     /**
-     * To delete all content and repopulate the database whenever the app is started
+     * To populate the database in the first run.
      */
     private static OrdersDatabase.Callback sOrdersDatabaseCallBack =
             new OrdersDatabase.Callback(){
@@ -40,10 +41,6 @@ public abstract class OrdersDatabase extends RoomDatabase {
                 public void onCreate (@NonNull SupportSQLiteDatabase db){
                     super.onCreate(db);
                     new PopulateDbAsync(INSTANCE).execute();
-                }
-                @Override
-                public void onOpen(@NonNull SupportSQLiteDatabase db){
-                    super.onOpen(db);
                 }
             };
     /**
@@ -60,10 +57,6 @@ public abstract class OrdersDatabase extends RoomDatabase {
         @Override
         protected Void doInBackground(final Void... params) {
             mDao.deleteAll();
-            CoffeeOrder order = new CoffeeOrder();
-            order.setOrderID(0);
-            order.setOrder("sami",1,true,true);
-            mDao.insertOrder(order);
             return null;
         }
     }
